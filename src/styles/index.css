@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { --bg:#f3f6fb; --card:#ffffff; --surface:#e5edf7; --text:#0b1626; --muted:#5d6f86; }
+.dark { --bg:#08111F; --card:#101D30; --surface:#193452; --text:#e8f0fb; --muted:#8fa3bd; color-scheme: dark; }
+body { margin:0; background:var(--bg); color:var(--text); font-family:Inter,system-ui,sans-serif; transition:background .3s,color .3s; }
+@keyframes fade { from { opacity:0; transform:translateY(8px); } }
+
+@layer components {
+  .card { @apply rounded-2xl border border-black/5 p-5 dark:border-white/5; background:var(--card); }
+  .btn { @apply inline-flex items-center justify-center gap-2 rounded-xl bg-[#3985CC] px-4 py-2 text-sm font-medium text-white transition hover:brightness-110 active:scale-95; }
+  .btn-ghost { @apply btn; background:var(--surface); color:var(--text); }
+  .input { @apply w-full rounded-xl border border-transparent px-3 py-2 text-sm outline-none focus:border-[#70B7FF]; background:var(--surface); color:var(--text); }
+  .muted { color:var(--muted); }
+}
